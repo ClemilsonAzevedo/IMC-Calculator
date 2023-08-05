@@ -31,7 +31,7 @@ body{
   background-color: #040924;
 }
 
-body, input, button{
+body, input, form button{
   font-size: 1.6rem;
   line-height: 2rem;
 }
@@ -93,11 +93,12 @@ form input:focus{
   margin-top: 1.6rem;
 }
 
-button{
+form button{
   margin-top: 3.2rem;
   padding: 1.6rem;
   width: 100%;
   border: none;
+  border-radius: .4rem;
   background-color: var(--bg-button);
   color: var(--tt-button);
   display: flex;
@@ -113,6 +114,42 @@ button{
   transition: background .3s;
 }
 
-button:hover{
+form button:hover{
   background-color: var(--bg-button-hover);
+}
+
+/* MODAL */
+
+.modal-wrapper.open{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background: rgba(0, 0, 0, 0.70);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal{
+  position: relative;
+}
+
+.modal button{
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.modal button:hover{
+  transform: scale(1.2);
 }
